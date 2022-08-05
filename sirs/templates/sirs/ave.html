@@ -1,0 +1,21 @@
+{% extends 'sirs/base.html' %}
+
+
+{% block content %}
+<div class="sortable"> 
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="3">Average Table Information</td></tr>
+        <tr>
+            <th>NAME</th>
+            <th>ID</th>
+            <th>Average</th></tr>
+        {% for i in ave %}
+            <tr>
+                <td>{{i.STNAME}}</td>
+                <td>{{i.STID}}</td>
+                <td>{{i.AVE}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+
+{% endblock%}

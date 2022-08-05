@@ -1,0 +1,147 @@
+{% extends 'sirs/base.html' %}
+
+{% block header %}
+<h3>ALL_INFORMATION</h3>
+{% endblock header%}
+
+{% block content %}
+
+<p>
+<a class="navbar-brand" style="color:SeaGreen;"href="{% url 'sirs:average' %}">Average</a>  
+<p>
+
+<div class="sortable"> 
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="5">STT Table Information - <a href="{% url 'sirs:new_stt' %}">New Data</a></td></tr>
+        <tr>
+            <th>STID</th>
+            <th>STNAME</th>
+            <th>STLEV</th>
+            <th>STMJR</th>
+            <th>STDEID</th></tr>
+        {% for i in stt %}
+            <tr>
+                <td>{{i.STID}}</td>
+                <td>{{i.STNAME}}</td>
+                <td>{{i.STLEV}}</td>
+                <td>{{i.STMJR}}</td>
+                <td>{{i.STDEID}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+
+<div class="sortable">
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="5">COT Table Information - <a href="{% url 'sirs:new_cot' %}">New Data</a></td></tr>
+        <tr>
+            <th>COID</th>
+            <th>COTITLE</th>
+            <th>COTYPE</th>
+            <th>CREDIT</th>
+            <th>CODEID</th></tr>
+        {% for i in cot %}
+            <tr>
+                <td>{{i.COID}}</td>
+                <td>{{i.COTITLE}}</td>
+                <td>{{i.COTYPE}}</td>
+                <td>{{i.CREDIT}}</td>
+                <td>{{i.CODEID}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+            
+<div class="sortable"> 
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="5">STCOT Table Information - <a href="{% url 'sirs:new_stcot' %}">New Data</a></td></tr>
+        <tr>
+            <th>STID</th>
+            <th>COID</th>
+            <th>TR</th>
+            <th>YRYR</th>
+            <th>Grade</th></tr>
+        {% for i in stcot %}
+            <tr>
+                <td>{{i.STID}}</td>
+                <td>{{i.COID}}</td>
+                <td>{{i.TR}}</td>
+                <td>{{i.YRYR}}</td>
+                <td>{{i.Grade}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+
+<div class="sortable"> 
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="5">PRof Table Information - <a href="{% url 'sirs:new_prof' %}">New Data</a></td></tr>
+        <tr>
+            <th>PRID</th>
+            <th>PRNAME</th>
+            <th>RANK</th>
+            <th>Sprcial</th>
+            <th>DEID</th></tr>
+        {% for i in prof %}
+            <tr>
+                <td>{{i.PRID}}</td>
+                <td>{{i.PRNAME}}</td>
+                <td>{{i.RANK}}</td>
+                <td>{{i.Special}}</td>
+                <td>{{i.DEID}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+
+<div class="sortable"> 
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="5">PRCO Table Information - <a href="{% url 'sirs:new_prco' %}">New Data</a></td></tr>
+        <tr>
+            <th>COID</th>
+            <th>PRID</th>
+            <th>TR</th>
+            <th>YRYR</th>
+            <th>GroupID</th></tr>
+        {% for i in prco %}
+            <tr>
+                <td>{{i.COID}}</td>
+                <td>{{i.PRID}}</td>
+                <td>{{i.TR}}</td>
+                <td>{{i.YRYR}}</td>
+                <td>{{i.GroupID}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+
+<div class="sortable"> 
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="5">Dept Table Information - <a href="{% url 'sirs:new_dept' %}">New Data</a></td></tr>
+        <tr>
+            <th>DEID</th>
+            <th>DETITLE</th>
+            <th>phone</th>
+            <th>address</th>
+            <th>MGRID</th></tr>
+        {% for i in dept %}
+            <tr>
+                <td>{{i.DEID}}</td>
+                <td>{{i.DETITLE}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.MGRID}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+
+<div class="sortable"> 
+    <table class="table table-bordered " border="3" style="float:none">
+        <tr><td colspan="5">PREREQ Table Information - <a href="{% url 'sirs:new_prereq' %}">New Data</a></td></tr>
+        <tr>
+            <th>COID</th>
+            <th>PRECOID</th></tr>
+        {% for i in prereq %}
+            <tr>
+                <td>{{i.COID}}</td>
+                <td>{{i.PRECOID}}</td>
+            </tr>
+        {% endfor %}</table>
+</div>
+
+{% endblock %}

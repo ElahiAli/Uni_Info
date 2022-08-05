@@ -1,0 +1,16 @@
+{% extends 'sirs/base.html' %}
+
+{% block header %}
+<h2>Add a new PRof info:</h2>
+{% endblock header %}
+
+
+{% block content%}
+
+<form  action="{% url 'sirs:new_prof'%}" method='POST' autocomplete="off">
+    {% csrf_token %}
+    {{form.as_p}}
+      <button name="submit" class="btn btn-primary">Save</button>
+
+</form>
+{% endblock content%}

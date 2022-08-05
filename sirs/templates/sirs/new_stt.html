@@ -1,0 +1,18 @@
+{% extends 'sirs/base.html' %}
+
+{% block header %}
+<h2>Add a new STT info:</h2>
+{% endblock header %}
+
+
+{% block content%}
+
+<form  action="{% url 'sirs:new_stt'%}" method='POST' autocomplete="off">
+    {% csrf_token %}
+    {{form.as_p}}
+      <button name="submit" class="btn btn-primary">Save</button>
+
+</form>
+{% endblock content%}
+
+

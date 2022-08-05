@@ -1,0 +1,37 @@
+{% extends 'sirs/base.html' %}
+
+{% block content %}
+    {% if searched %}
+        
+        <center>
+        <h4>you searched : {{searched}}</h4><br/>
+        
+        {% for info in stt %}
+            {{info.STNAME}} - {{info.STID}} - {{info.STLEV}} - {{info.STMJR}} - {{info.STDEID}}<br/>
+        {% endfor %}
+
+        {% for info in cot %}
+            {{info.COID}} - {{info.COTITLE}} - {{info.CREDIT}} - {{info.COTYPE}} - {{info.CODEID}}<br/>
+        {% endfor %}
+        
+
+        {% for info in prof %}
+            {{info.PRNAME}} - {{info.PRID}} - {{info.RANK}} - {{info.Special}} - {{info.DEID}}<br/>
+        {% endfor %}
+
+        {% for info in stcot %}
+            {{info.COID}} - {{info.TR}} - {{info.YRYR}} - {{info.Grade}}<br/>
+        {% endfor %}
+
+        {% for info in prco %}
+            {{info.COID}} - {{info.TR}} - {{info.YRYR}} - {{info.GroupID}}<br/>
+        {% endfor %}
+
+    {% else %}
+        <center>
+        <h3>Hey! You Forget To Search</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHa35AYDCm2CKEc8oxbJ1FRvM28S-uMlKVGq6ZPXarXo-Da6yjcJkfOKbiH63euANTR4w&usqp=CAU" alt="search photo" width="20"" />
+    {% endif %}
+
+
+{% endblock %}
